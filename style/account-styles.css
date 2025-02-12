@@ -1,0 +1,113 @@
+
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+    background-image: url('./photos/background.jpg');
+    background-position: center;  /* Центрирует изображение */
+    background-repeat: no-repeat;  /* Запрещает повторение изображения */
+    overflow: hidden;
+}
+
+.all {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#avatar-upload-img {
+    position: fixed;
+    cursor: pointer;
+    width: 20px; /* Размер картинки */
+    height: 20px;
+    top: -295px;
+    right: 180px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+
+#avatar-upload {
+    position: absolute;
+    width: 100%; /* Тот же размер, что у картинки */
+    height: 100%;
+    opacity: 0; /* Делаем input невидимым */
+    z-index: 11; /* Убедимся, что input будет сверху картинки */
+}
+
+#account-avatar {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top: -200px;
+    left: -300px;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+#account-username {
+    position: fixed;
+    top: -265px;
+    left: -100px;
+    transform: translate(-50%, -50%);
+    text-align: left; 
+    word-spacing:normal;
+    letter-spacing: normal;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+#account-email {
+    position: fixed;
+    top: -245px;
+    left: -100px;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    word-spacing: normal;
+    letter-spacing: normal;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+#logout-btn {
+    width: 20px; /* Размер картинки */
+    height: 20px;
+    cursor: pointer;
+    position: fixed;
+    top: -245px;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    background-color: none;
+    background: none;
+    transition: .2s linear;
+}
+
+#logout-btn:hover {
+    position: fixed;
+    top: -246px;
+    left: 20px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+
+
+#home-button {
+    cursor: pointer;
+    position: fixed;  /* Фиксированное позиционирование */
+    bottom: 235px;
+    right: 400px;
+    transform: translate(-50%, -50%); /* Сдвиг для центрирования */
+    border-radius: 20px;
+    transition: .2s linear;
+    background: none;
+    padding: 10px;
+}
+
+#home-button:hover {
+    position: fixed;
+    bottom: 236px;
+    right: 400px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}

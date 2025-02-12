@@ -1,0 +1,50 @@
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+    background-image: url('./photos/background.jpg');
+    background-position: center;  /* Центрирует изображение */
+    background-repeat: no-repeat;  /* Запрещает повторение изображения */
+    overflow: hidden;
+}
+
+
+
+.account-info {
+    cursor: pointer;
+    position: fixed;  /* Фиксированное позиционирование */
+    top: 50px;
+    right: 40px;
+    transform: translate(-50%, -50%); /* Сдвиг для центрирования */
+    border-radius: 20px;
+    transition: .2s linear;
+    background: none;
+    padding: 10px;
+    text-align: center;
+    word-spacing: normal;
+    letter-spacing: normal;
+    white-space: nowrap;
+    font-weight: bold;
+    color: white;
+}
+
+.account-info:hover {
+    position: fixed;
+    top: 49px;
+    right: 40px;
+    cursor: pointer;
+}
+
+#account-avatar {
+    color: white;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: none;
+    border-radius: 20px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Установи нужную ширину */
+    height: 50px; /* Установи нужную высоту */
+}
