@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    box-sizing: border-box;
-  }
 
 body {
     color: white;
@@ -12,14 +6,10 @@ body {
     background-position: center;  /* Центрирует изображение */
     background-repeat: no-repeat;  /* Запрещает повторение изображения */
     overflow: hidden;
-    margin: 0;
-    padding: 0;
 }
 
 .all {
-    margin: 0;
-    padding: 0;
-    position: fixed; /* или фиксированное, если нужно, но без трансформации */
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -60,6 +50,7 @@ body {
     top: -265px;
     left: -100px;
     transform: translate(-50%, -50%);
+    text-align: left; 
     word-spacing:normal;
     letter-spacing: normal;
     white-space: nowrap;
@@ -71,6 +62,7 @@ body {
     top: -245px;
     left: -100px;
     transform: translate(-50%, -50%);
+    text-align: left;
     word-spacing: normal;
     letter-spacing: normal;
     white-space: nowrap;
@@ -122,77 +114,24 @@ body {
 
 .description-container {
     position: fixed;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-
 }
 
 #account-description{
-    display: block;
-    margin: 0;            /* Убираем внешние отступы */
-    padding: 0;           /* Убираем внутренние отступы */
-    line-height: 1.5;     /* Высота строки для удобства */
-    overflow: hidden;     /* Скрывает переполнение */
-    white-space: nowrap;  /* Отключает перенос строк */
-    text-overflow: ellipsis; /* Добавляет многоточие, если текст не помещается */
     position: fixed;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
-    border-radius: 20px;
-    padding: 20px;
-    top: 0px;
-    left: 50px;
-    transform: translate(-50%, -50%);
 }
 
 #edit-description {
-    cursor: pointer;
     position: fixed;
-    padding: 15px;
-    top: -200px;
-    left: 280px;
-    transform: translate(-50%, -50%);
 }
 
 #description-input {
-    color: white;
     position: fixed;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
-    border-radius: 20px;
-    padding: 200px;
-    top: 0px;
-    left: 0px;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 1);
-    resize: none;
 }
 
-.description-buttons {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 #save-description {
-    cursor: pointer;
-    color: white;
     position: fixed;
-    top: 190px;
-    left: 250px;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
-    background-color: rgba(0, 0, 0, 0.1);;
-    border-radius: 20px;
 }
 
 #cancel-description {
     position: fixed;
-    top: -200px;
-    left: 250px;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
-    background-color: rgba(0, 0, 0, 0.1);;
-    border-radius: 20px;
-    cursor: pointer;
-    color: white;
 }

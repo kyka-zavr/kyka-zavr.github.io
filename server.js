@@ -88,3 +88,29 @@ app.post("/api/upload-avatar", upload.single("avatar"), (req, res) => {
 app.listen(PORT, () => {
     console.log(`Сервер запущен на http://localhost:${PORT}`);
 });
+
+
+app.post("/api/update-description", (req, res) => {
+    const { username, description } = req.body;
+
+    fs.readFile("db.json", "utf8", (err, data) => {
+        if (err) return res.status(500).send("Ошибка чтения файла!");
+
+        const db = JSON.parse(data || '{"users": []}');
+        const user = db.users.find(user => user.username === username);
+
+        if (!user) return res.status(404).send("Пользователь не найден!");
+
+        user.description = description;
+
+        fs.writeFile("db.json", JSON.stringify(db, null, 2), (err) => {
+            if (err) return res.status(500).send("Ошибка записи файла!");
+            res.send("Описание обновлено!");
+        });
+    });
+});
+
+
+
+
+

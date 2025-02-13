@@ -48,3 +48,7 @@ body {
     width: 50px; /* Установи нужную ширину */
     height: 50px; /* Установи нужную высоту */
 }
+
+#description-buttons {
+    position: fixed;
+}

@@ -204,3 +204,88 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("One or more elements for password toggle are missing.");
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    loadAccountDescription();
+
+    document.getElementById("edit-description").addEventListener("click", function () {
+        document.getElementById("description-input").style.display = "block";
+        document.getElementById("save-description").style.display = "block";
+        document.getElementById("description-input").value = document.getElementById("account-description").textContent;
+    });
+
+    document.getElementById("save-description").addEventListener("click", function () {
+        const newDescription = document.getElementById("description-input").value;
+        saveAccountDescription(newDescription);
+    });
+});
+
+function loadAccountDescription() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) return;
+
+    fetch(`/api/users`)
+        .then(response => response.json())
+        .then(users => {
+            const foundUser = users.find(u => u.username === user.username);
+            if (foundUser && foundUser.description) {
+                document.getElementById("account-description").textContent = foundUser.description;
+            }
+        });
+}
+
+function saveAccountDescription(description) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) return;
+
+    fetch("/api/update-description", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: user.username, description })
+    }).then(response => response.text())
+      .then(() => {
+          document.getElementById("account-description").textContent = description;
+          document.getElementById("description-input").style.display = "none";
+          document.getElementById("save-description").style.display = "none";
+      });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    let originalDescription = ""; // Для хранения старого описания
+
+    document.getElementById("edit-description").addEventListener("click", function () {
+        const descriptionText = document.getElementById("account-description").textContent;
+        originalDescription = descriptionText; // Запоминаем старое описание
+        document.getElementById("description-input").value = descriptionText;
+
+        document.getElementById("description-input").style.display = "block";
+        document.querySelector(".description-buttons").style.display = "block";
+    });
+
+    document.getElementById("save-description").addEventListener("click", function () {
+        const newDescription = document.getElementById("description-input").value;
+        saveAccountDescription(newDescription);
+    });
+
+    document.getElementById("cancel-description").addEventListener("click", function () {
+        document.getElementById("description-input").style.display = "none";
+        document.querySelector(".description-buttons").style.display = "none";
+        document.getElementById("description-input").value = originalDescription; // Возвращаем старое описание
+    });
+});
+
+document.getElementById("save-description").addEventListener("click", function () {
+    const newDescription = document.getElementById("description-input").value;
+    saveAccountDescription(newDescription);
+
+    // Скрываем поле и кнопки после сохранения
+    document.getElementById("description-input").style.display = "none";
+    document.querySelector(".description-buttons").style.display = "none";
+});
+
+
+
+
+
+
