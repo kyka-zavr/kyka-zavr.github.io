@@ -44,16 +44,10 @@ h1 {
   text-transform: uppercase;
 }
 
-.sub {
-  margin: 10px 0 34px;
-  font-size: 12px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-}
-
 .links {
   display: grid;
   gap: 12px;
+  margin-top: 34px;
 }
 
 .links a {
