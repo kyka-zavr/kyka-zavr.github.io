@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#000000"/>
+  <g transform="translate(6 24.2) scale(0.2889)">
+    <path d="M90 27C62 -9 0 -9 0 27C0 63 62 63 90 27C118 63 180 63 180 27C180 -9 118 -9 90 27ZM90 27C61 -2 20 3 20 27C20 51 61 56 90 27C110 47 160 51 160 27C160 3 110 7 90 27Z" fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff"/>
+  </g>
+</svg>
